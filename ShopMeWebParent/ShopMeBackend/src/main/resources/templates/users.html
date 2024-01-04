@@ -10,14 +10,36 @@
 </head>
 <body>
 <div class = "container-fluid">
-    <nav class="navbar navbar-expand bg-dark navbar-dark">
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" th:href="@{/home}"><img th:src="@{/images/ShopmeAdminSmall.png}"></a>
     </nav>
     <h1> Users </h1>
+    <table class="table table-responsive-xl table-bordered tablle-hover">
+   <thead class="table-dark">
+    <tr >
+        <th>User Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>Roles</th>
+        <th>Enabled</th>
+    </tr>
+   </thead>
+        <tbody>
+            <tr th:each=" user : ${userList}">
+                <td>[[${user.Id}]]</td>
+                <td>[[${user.firstName}]]</td>
+                <td>[[${user.LastName}]]</td>
+                <td>[[${user.email}]]</td>
+                <td>[[${user.roles}]]</td>
+                <td>[[${user.enabled}]]</td>
+            </tr>
+        </tbody>
+    </table>
 
 <div>
     <p>
-        Shopme Admin Panel - Copyright &copy;Shopme
+       <footer>Shopme Admin Panel - Copyright &copy;Shopme</footer> 
     </p>
 </div>
 </div>

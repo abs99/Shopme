@@ -7,6 +7,8 @@ import java.util.Set;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
@@ -21,10 +23,12 @@ import jakarta.persistence.JoinColumn;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
 	
 	public Integer getId() {
         return Id;
+        
     }
 
     public void setId(Integer id) {
@@ -45,7 +49,7 @@ public class User {
 	
 	@Column(length = 64)
 	private String photos;
-	
+
 	private boolean enabled;
 	
 	@ManyToMany(fetch = FetchType.EAGER)

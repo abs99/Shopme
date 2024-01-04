@@ -96,13 +96,13 @@ public class UserRepositoryTest {
 		
 	}
 	
-	// @Test
-	// public void testGetUserByEmail() {
-	// 	String email = "ravi@gmail.com";
-	// 	User user = repo.getUserByEmail(email);
+	@Test
+	public void testGetUserByEmail() {
+		String email = "ravi@gmail.com";
+		User user = repo.getUserByEmailId(email);
 		
-	// 	assertThat(user).isNotNull();
-	// }
+		assertThat(user).isNotNull();
+	}
 	
 	// @Test
 	// public void testCountById() {
